@@ -1,0 +1,17 @@
+@import '../variables';
+
+.slider-container {
+  width: 100%;
+  padding: 20px;
+  background-color: $secondary;
+}
+
+.inner-carousel {
+  display: flex;
+  justify-content: space-between;
+}
+
+.carousel {
+  cursor: grab;
+  overflow: hidden;
+}
