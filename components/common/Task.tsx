@@ -1,6 +1,5 @@
 import React from 'react';
 import { Task } from '../../data/Models/Task';
-import { tasks } from '../../data/StaticData/CarouselData';
 import styles from '../../styles/common/Task.module.scss';
 import Slider from './Slider';
 import TaskMini from './TaskMini';
@@ -31,7 +30,7 @@ const Task: React.FC<Props> = ({ task }) => {
           <div className={styles['sub-tasks']}>
             <Slider 
               components={
-                task.subTasks.map((subTask, idx) => <TaskMini task={subTask}/>)
+                task.subTasks.map((subTask) => <TaskMini task={subTask}/>)
               }
             />
           </div> : 

@@ -1,8 +1,11 @@
 @import '../variables';
 
 .app-container {
-  background-color: $primary;
+  background-color: transparent;
   min-height: 100vh;
+  background-image: url('../../public/backgorund.jpg');
+  background-size: contain;
+  background-repeat: repeat-y;
 }
 
 .body-container {
