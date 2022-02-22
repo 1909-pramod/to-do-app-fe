@@ -12,12 +12,16 @@ export const counterSlice = createSlice({
   initialState,
   reducers: {
     loginActions: (state, action: PayloadAction<{ user: User }>) => {
+      const initState = state
       switch (action.type) {
         case Action.USER_LOGIN:
           state = action.payload.user;
           break;
         case Action.USER_LOGOUT:
           state = userState;
+          break;
+        default:
+          state = initState
           break;
       }
     }
