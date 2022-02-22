@@ -1,0 +1,14 @@
+@import '../variables';
+
+.app-container {
+  background-color: transparent;
+  min-height: 100vh;
+  background-image: url('../../public/backgorund.jpg');
+  background-size: contain;
+  background-repeat: repeat-y;
+}
+
+.body-container {
+  margin: 0 7vw;
+  padding: 30px 0;
+}

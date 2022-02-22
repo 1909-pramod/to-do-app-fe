@@ -1,0 +1,45 @@
+@import '../variables';
+@import '../mixins';
+
+.task-mini-card {
+  min-width: 204px;
+  width: 204px;
+  min-height: 250px;
+  height: 250px;
+  display: flex;
+  align-items: center;
+  margin: 0 10px;
+  text-align: center;
+}
+
+.mini-hover {
+  position: relative;
+  background-color: $secondary;
+  border-radius: 1rem;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+  .mini-title {
+    @include flex-center;
+    padding: 1rem;
+    color: $primary-color;
+    font-size: 24px;
+    line-height: 38px;
+  }
+  .mini-title, .mini-description {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden; /* Safari */
+    backface-visibility: hidden;
+  }
+  .mini-description {
+    transform: rotateY(180deg);
+  }
+}
+
+.task-mini-card:hover .mini-hover {
+  transform: rotateY(180deg);
+}
