@@ -6,10 +6,7 @@ import styles from '../../styles/common/FilterSortBar.module.scss';
 const FilterSortBar = () => {
   const [age, setAge] = useState('None');
 
-  const handleChange = (e: SelectChangeEvent<string>) => {
-    setAge(e.target.value)
-  }
-
+  const handleChange = (e: SelectChangeEvent<string>) => setAge(e.target.value)
 
   return (
     <div className={styles.bar}>

@@ -8,7 +8,6 @@ interface Props {
   task: Task
 }
 
-
 const Task: React.FC<Props> = ({ task }) => {
   return (
     <div className={styles['task-card']}>
@@ -26,15 +25,15 @@ const Task: React.FC<Props> = ({ task }) => {
           { task.description }
         </div>
         {
-          task.subTasks ? 
-          <div className={styles['sub-tasks']}>
-            <Slider 
-              components={
-                task.subTasks.map((subTask) => <TaskMini task={subTask}/>)
-              }
-            />
-          </div> : 
-          <></>
+          task.subTasks ?
+            <div className={styles['sub-tasks']}>
+              <Slider
+                components={
+                  task.subTasks.map((subTask, idx) => <TaskMini task={subTask} key={idx}/>)
+                }
+              />
+            </div> :
+            <></>
         }
       </div>
     </div>

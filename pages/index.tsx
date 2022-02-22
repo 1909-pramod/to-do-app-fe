@@ -9,10 +9,10 @@ import styles from '../styles/Home.module.scss'
 const Home: NextPage = () => {
   return (
     <div className={styles.container}>
-      <Slider 
+      <Slider
         components={
-          tasks.map((task) => <TaskMini task={task}/>)
-        } 
+          tasks.map((task, idx) => <TaskMini task={task} key={idx}/>)
+        }
       />
       <FilterSortBar />
       {

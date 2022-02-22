@@ -1,4 +1,4 @@
-import React, { ReactChild, ReactChildren, useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { motion } from 'framer-motion';
 import styles from '../../styles/common/Slider.module.scss';
 
@@ -9,7 +9,7 @@ interface Props {
 const Slider: React.FC<Props> = ({ components }) => {
 
   const [width, setWidth] = useState(0)
-  let carousel = useRef<HTMLDivElement | null>(null)
+  const carousel = useRef<HTMLDivElement | null>(null)
 
   useEffect(() => {
     setWidth((carousel.current?.scrollWidth || 0) - (carousel.current?.offsetWidth || 0))
@@ -19,16 +19,16 @@ const Slider: React.FC<Props> = ({ components }) => {
     <div className={styles['slider-container']}>
       <motion.div className={styles.carousel} ref={carousel}>
         <motion.div drag='x' dragConstraints={{right: 0, left: -width}} className={styles['inner-carousel']}>
-          { 
+          {
             components.map((component, idx) => {
               return (
                 <div key={idx}>
                   { component }
                 </div>
               )
-            }) 
-        }
-        </motion.div>  
+            })
+          }
+        </motion.div>
       </motion.div>
     </div>
   );

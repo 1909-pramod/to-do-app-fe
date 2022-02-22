@@ -9,10 +9,9 @@ const Nav:React.FC = () => {
   return (
     <div className={styles['nav-container']}>
       <div>
-        
       </div>
       <div className={styles.profile}>
-        { initials.toUpperCase() }        
+        { initials.toUpperCase() }
       </div>
     </div>
   );
